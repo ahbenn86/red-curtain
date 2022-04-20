@@ -12,6 +12,5 @@
 
 * React (JSX)
 * Node
-* OMDB API
+* RESTful API
 * Bootstrap
-* Postman Rest API
