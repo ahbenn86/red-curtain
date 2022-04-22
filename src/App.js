@@ -27,16 +27,24 @@ function App() {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("react-red-curtain-favorites", JSON.stringify(items));
+  };
+
   const AddFavoriteMovie = (movie) => {
     const newFavoriteList = [...favorites, movie];
     setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList);
   };
 
   const RemoveFavoriteMovie = (movie) => {
     const newFavoriteList = favorites.filter(
-      (facvorite) => favorites.imdbID !== movie.imdbID
+      (favorite) => favorite.imdbID !== movie.imdbID
     );
-  }
+
+    setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList);
+  };
 
   return (
     <div className="container-fluid red-curtain">

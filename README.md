@@ -14,4 +14,5 @@
 * Node
 * OMDB API
 * Bootstrap
-* Postman Rest API
+* RESTful API
+* Local storage
